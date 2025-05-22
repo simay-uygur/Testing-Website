@@ -49,6 +49,21 @@ test('Valid IP input prevents popup', async ({ page }) => {
     await expect(popup).toHaveCount(0);
 });
 
+test('Popup appears for invalid input', async ({ page }) => {
+    await page.goto('https://s4e.io/free-security-tools');
+
+    // Target the correct input — first one on page
+    const ipInput = page
+        .locator('input[placeholder*="example.io"]')
+        .first();
+
+    await ipInput.fill('!@#%^&*()'); // 🚨 clearly invalid
+    await page.click('button:has-text("Start Full Scan")');
+
+    const popup = page.locator('text=Scan Only One: Domain, Ipv4, Subdomain');
+    await expect(popup).toBeVisible();
+});
+
 
 test('Araçlar tablosu satır içeriyor', async ({ page }) => {
     await page.goto('https://s4e.io/free-security-tools');
