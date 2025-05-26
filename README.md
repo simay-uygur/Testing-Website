@@ -22,7 +22,7 @@ This project automates functional testing of the [S4E Free Security Tools page](
    npm install
 ```
 
-5. Install Playwright browsers:
+4. Install Playwright browsers:
    ```bash
 	npx playwright install
 	```
