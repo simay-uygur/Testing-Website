@@ -15,34 +15,34 @@ This project automates functional testing of the [S4E Free Security Tools page](
    ```bash
    git clone <your-repo-url>
    cd <project-directory>
+   ```
 
-	3.	Install dependencies:
+3.	Install dependencies:
+   ```bash
+   npm install
+```
 
-npm install
-
-
-	4.	Install Playwright browsers:
-
-npx playwright install
-
-
+5. Install Playwright browsers:
+   ```bash
+	npx playwright install
+	```
 
 ⸻
 
 ▶️ Running the Tests
 
 To run all tests:
-
-npx playwright test
-
+   ```bash
+	npx playwright test
+```
 To run a specific test file:
-
-npx playwright test tests/searchtests.spec.ts
-
+   ```bash
+	npx playwright test tests/searchtests.spec.ts
+```
 To run only one test (with name filtering):
-
-npx playwright test -g "Valid IP input prevents popup"
-
+   ```bash
+	npx playwright test -g "Valid IP input prevents popup"
+```
 
 ⸻
 
